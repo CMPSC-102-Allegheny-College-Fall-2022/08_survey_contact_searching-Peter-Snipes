@@ -4,20 +4,20 @@ from typing import List
 
 import csv
 
-# note: see https://docs.python.org/3/library/csv.html 
+# note: see https://docs.python.org/3/library/csv.html
 
 
 def search_for_email_given_job(job_description: str, contacts: str) -> List[List[str]]:
     """Search for and return job description(s) given an email address."""
     contacts_file = ""
     for contacts_file in csv.reader(
-    contacts.splitlines(),
-    quotechar = '"',
-    delimiter = ",",
-    quoting = csv.QUOTE_ALL,
-    skipinitialspace = True,
+        contacts.splitlines(),
+        quotechar='"',
+        delimiter=",",
+        quoting=csv.QUOTE_ALL,
+        skipinitialspace=True,
     ):
-    
+
         current_contact_job = contacts_file[1]
         if job_description in current_contact_job.lower():
             contacts_file.append(contacts_file)

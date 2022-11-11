@@ -5,6 +5,7 @@ from typing import Optional
 import typer
 
 from contactsearcher import search
+
 # Add all of the required import statements to this module
 
 cli = typer.Typer()
@@ -39,7 +40,7 @@ def contactsearcher(
     typer.echo(
         f'  We are looking for contacts who have a job related to "{job_description}":'
     )
-    
+
     input = search.search_for_email_given_job(job_description, contacts_text)
     for index, input in enumerate(input):
         typer.echo(f"   {input[0]} is a " + f"{input[1]}")
