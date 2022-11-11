@@ -8,7 +8,7 @@ import csv
 
 def search_for_email_given_job(job_description: str, contacts: str) -> List[List[str]]:
     """Search for and return job description(s) given an email address."""
-    contacts_text = ""
+    contacts_line = ""
     for contact_line in csv.reader(
         contacts.splitlines(),
         quotechar='"',
