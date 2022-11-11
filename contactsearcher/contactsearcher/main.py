@@ -39,6 +39,7 @@ def contactsearcher(
     typer.echo(
         f'  We are looking for contacts who have a job related to "{job_description}":'
     )
+    
     input = search.search_for_email_given_job(job_description, contacts_text)
     for index, input in enumerate(input):
         typer.echo(f"   {input[0]} is a " + f"{input[1]}")
@@ -48,7 +49,3 @@ def contactsearcher(
     # display final information about the program's behavior in the terminal window;
     # this should summarize whether or not the program found any matches
     # refer to the expected output on Discord and/or Proactive Programmers for details
-
-
- 
-    
