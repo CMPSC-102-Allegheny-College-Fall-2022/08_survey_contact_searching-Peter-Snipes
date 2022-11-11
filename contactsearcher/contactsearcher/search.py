@@ -9,8 +9,8 @@ import csv
 
 def search_for_email_given_job(job_description: str, contacts: str) -> List[List[str]]:
     """Search for and return job description(s) given an email address."""
-    contacts_file = ""
-    for contacts_file in csv.reader(
+    contact_line = ""
+    for contact_line in csv.reader(
     contacts.splitlines(),
     quotechar = '"',
     delimiter = ",",
@@ -18,10 +18,10 @@ def search_for_email_given_job(job_description: str, contacts: str) -> List[List
     skipinitialspace = True,
     ):
     
-        current_contact_job = contacts_file[1]
+        current_contact_job = contact_line[1]
         if job_description in current_contact_job.lower():
-            contacts_file.append(contacts_file)
-        return contacts_file
+            contact_line.append(contact_line)
+        return contact_line
     # create an empty list of the contacts
     # iterate through the file, parsing it line by line
     # refer to the file called input/contacts.txt to learn more about
